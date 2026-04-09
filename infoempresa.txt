@@ -1,0 +1,24 @@
+AgrooCare
+-> Detecção preditiva de doenças por meio da umidade, temperatura, sol, chuva. (Ajustar irrigação, adubação ou senão instruir o produtor a resolver o problema)
+
+-> Detecção de doenças por imagem
+Preditividade - prever se vai chover e cancelar a irrigação
+irrigação e adubação influenciadas pela temperatura, se esta sol chovendo ou nublado, umidade de solo, adubação preditiva por meio de previsões do tempo
+
+Ideias : 
+fert irrigação
+controle de pragas por meio de imagens
+deteção de doenças por imagem
+Ajuste de adubação por meio das doenças
+Diferencial : irrigação e adubação influenciadas pela temperatura, se esta sol chovendo ou nublado, umidade de solo, adubação preditiva por meio de previsões do tempo
+Nosso diferencial maior: Melhor performance ao saber a doença que a planta apresenta, tendo um assertividade maior para a Fert Irrigação
+
+Equipe :
+Felipe Seiji Ishii - Co-fundador
+Matheus Costa Real - Co-fundador
+Hadassa Kelly Assis Dos Santos - Co-fundador
+Gabriel Rodrigues da Silva - Co-fundador
+Ygor Santos de Oliveira - Co-fundador
+Davi Roberto Fernandes da Silva - Co-fundador
+Allyson Portella - Coordenador de Marketing
+Laura Junqueira - Especialista em Marketing
