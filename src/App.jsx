@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import logoAgroo from './assets/4.png'
 import crop from './assets/crop.png'
 import planta from './assets/planta_sistema.png'
+import { LucideMenu } from 'lucide-react'
 
 const IMG = {
   hero:
@@ -25,6 +26,7 @@ const team = [
 
 function App() {
   const [headerVisible, setHeaderVisible] = useState(false)
+  const [menuMobile, setMenuMobile] = useState(false)
   const lastScrollY = useRef(0)
   const ticking = useRef(false)
 
@@ -56,8 +58,49 @@ function App() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  function handleMenu() {
+    setMenuMobile(!menuMobile)
+  }
+
   return (
     <div className="min-h-screen bg-stone-50 text-stone-900 antialiased">
+
+      {
+        menuMobile && (
+          <div className="fixed inset-0 z-50 flex">
+
+
+            <div
+              onClick={handleMenu}
+              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            />
+
+            <nav className="relative ml-auto h-full w-64 bg-white  p-6 flex flex-col gap-6 animate-slide-in">
+
+              <button
+                onClick={handleMenu}
+                className="self-end text-2xl font-bold"
+              >
+                ✕
+              </button>
+
+              <a onClick={handleMenu} href="#topo">Início</a>
+              <a onClick={handleMenu} href="#solucoes">Soluções</a>
+              <a onClick={handleMenu} href="#diferencial">Diferencial</a>
+              <a onClick={handleMenu} href="#equipe">Equipe</a>
+
+              <a
+                onClick={handleMenu}
+                href="#contato"
+                className="mt-4 rounded-full bg-emerald-700 px-4 py-2 text-white text-center"
+              >
+                Fale conosco
+              </a>
+
+            </nav>
+          </div>
+        )
+      }
       <header
         className={`shadow-lg fixed inset-x-0 top-0 z-50 border-b border-emerald-900/10 bg-stone-50/95 backdrop-blur-md transition-transform duration-300 ease-out ${headerVisible ? 'translate-y-0' : '-translate-y-full pointer-events-none'
           }`}
@@ -73,7 +116,7 @@ function App() {
               height={5}
             />
           </a>
-          <nav className="flex flex-wrap items-center justify-end gap-2 text-sm font-medium text-emerald-900/90 sm:gap-6">
+          <nav className="hidden md:flex flex-wrap items-center justify-end gap-2 text-sm font-medium text-emerald-900/90 sm:gap-6">
             <a href="#solucoes" className="hover:text-emerald-700">
               Soluções
             </a>
@@ -90,6 +133,10 @@ function App() {
               Fale conosco
             </a>
           </nav>
+
+          <button onClick={handleMenu} className="flex md:hidden items-center justify-end  text-sm font-medium text-emerald-900/90 hover:text-emerald-950/90 transition-all cursor-pointer hover:scale-105">
+            <LucideMenu />
+          </button>
         </div>
       </header>
 
