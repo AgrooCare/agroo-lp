@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import logoAgroo from './assets/4.png'
+import crop from './assets/crop.png'
 import planta from './assets/planta_sistema.png'
 
 const IMG = {
@@ -9,8 +10,6 @@ const IMG = {
     'https://images.unsplash.com/photo-1595841050596-5d07c832ad7e?auto=format&fit=crop&w=1200&q=80',
   plantation:
     'https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=1200&q=80',
-  cropClose:
-    'https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80',
 }
 
 const team = [
@@ -276,7 +275,7 @@ function App() {
             <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
               <figure className="order-2 overflow-hidden rounded-2xl shadow-xl lg:order-1">
                 <img
-                  src={IMG.cropClose}
+                  src={crop}
                   alt="Detalhe de cultivo e vegetação"
                   className="aspect-[4/3] w-full object-cover"
                   loading="lazy"
