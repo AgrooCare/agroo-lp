@@ -147,9 +147,9 @@ function App() {
             style={{ backgroundImage: `url(${IMG.hero})` }}
             aria-hidden
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-950/85 via-emerald-900/75 to-stone-900/80" />
+          <div className="absolute inset-0 bg-linear-to-br from-emerald-950/85 via-emerald-900/75 to-stone-900/80" />
 
-          <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-center px-5 py-16 sm:px-6 lg:flex-row lg:items-center lg:py-0">
+          <div className="relative mx-auto flex min-h-svh max-w-6xl flex-col justify-center px-5 py-16 sm:px-6 lg:flex-row lg:items-center lg:py-0">
 
             <div className="flex-1 space-y-5 text-white text-center lg:text-left">
 
@@ -240,7 +240,7 @@ function App() {
 
             <div className="mt-14 grid gap-6 sm:grid-cols-3">
 
-              <article className="relative overflow-hidden rounded-3xl border border-stone-200 bg-gradient-to-b from-emerald-50 to-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <article className="relative overflow-hidden rounded-3xl border border-stone-200 bg-linear-to-b from-emerald-50 to-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl text-emerald-900 ">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 9V3m0 0a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0 6v6m0 0a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm-6-3H3m3 0a6 6 0 1 0 12 0 6 6 0 0 0-12 0zm15 0h-3" />
@@ -287,7 +287,7 @@ function App() {
                 </div>
               </article>
 
-              <article className="relative overflow-hidden rounded-3xl border border-stone-200 bg-gradient-to-b from-emerald-50 to-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+              <article className="relative overflow-hidden rounded-3xl border border-stone-200 bg-linear-to-b from-emerald-50 to-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl text-emerald-900 ">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 3C12 3 5.25 10.5 5.25 14.25a6.75 6.75 0 0 0 13.5 0C18.75 10.5 12 3 12 3Z" />
@@ -324,7 +324,7 @@ function App() {
                 <img
                   src={crop}
                   alt="Detalhe de cultivo e vegetação"
-                  className="aspect-[4/3] w-full object-cover"
+                  className="aspect-4/3 w-full object-cover"
                   loading="lazy"
                 />
               </figure>
