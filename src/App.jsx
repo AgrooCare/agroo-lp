@@ -117,7 +117,7 @@ function App() {
 
               <p className="mx-auto max-w-md text-base text-emerald-50/95 sm:text-lg lg:mx-0 lg:max-w-xl">
                 Detecção preditiva de doenças e inteligência para irrigação e
-                adubação — com base em umidade, temperatura, sol e chuva, além
+                adubação com base em umidade, temperatura, sol e chuva, além
                 de análise por imagem para orientar o produtor na hora certa.
               </p>
 
