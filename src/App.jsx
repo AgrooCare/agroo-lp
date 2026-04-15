@@ -3,6 +3,9 @@ import logoAgroo from './assets/4.png'
 import crop from './assets/crop.png'
 import planta from './assets/planta_sistema.png'
 import { LucideMenu } from 'lucide-react'
+import { HowItWorksSection } from './components/HowItWorksSection'
+import { SocialProofSection } from './components/SocialProofSection'
+import { ResultSection } from './components/ResultsSection'
 
 const IMG = {
   hero:
@@ -314,6 +317,12 @@ function App() {
           </div>
         </section>
 
+
+        <HowItWorksSection />
+
+        <SocialProofSection />
+        <ResultSection />
+
         <section
           id="diferencial"
           className="scroll-mt-24 py-16 sm:py-24"
@@ -352,7 +361,6 @@ function App() {
             </div>
           </div>
         </section>
-
         <section
           id="equipe"
           className="scroll-mt-24 border-t border-stone-200 bg-white py-16 sm:py-24"
@@ -378,7 +386,6 @@ function App() {
                     key={person.name}
                     className="group flex flex-col items-center rounded-2xl border border-stone-200 bg-stone-50/60 px-5 py-8 text-center shadow-sm transition hover:border-emerald-200 hover:shadow-md hover:-translate-y-1"
                   >
-                    {/* Avatar */}
                     <div className="relative mb-4 h-20 w-20 shrink-0">
                       {person.photo ? (
                         <img
@@ -410,8 +417,6 @@ function App() {
             </ul>
           </div>
         </section>
-
-
       </main>
 
 
