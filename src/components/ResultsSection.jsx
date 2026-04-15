@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { Droplets, TrendingUp, ShieldAlert, Radio } from 'lucide-react'
 
 
@@ -33,30 +33,9 @@ const metrics = [
     },
 ]
 
-function useInView(threshold = 0.15) {
-    const ref = useRef(null)
-    const [inView, setInView] = useState(false)
 
-    useEffect(() => {
-        const el = ref.current
-        if (!el) return
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setInView(true)
-                    observer.disconnect()
-                }
-            },
-            { threshold }
-        )
-        observer.observe(el)
-        return () => observer.disconnect()
-    }, [threshold])
 
-    return { ref, inView }
-}
-
-function MetricCard({ metric, index, inView }) {
+function MetricCard({ metric }) {
     const [hovered, setHovered] = useState(false)
     const { Icon } = metric
 
@@ -64,17 +43,7 @@ function MetricCard({ metric, index, inView }) {
         <div
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            style={{
-                transitionDelay: `${index * 100}ms`,
-                opacity: inView ? 1 : 0,
-                transform: inView
-                    ? hovered ? 'translateY(-8px)' : 'translateY(0)'
-                    : 'translateY(28px)',
-                transition: 'opacity 0.55s ease, transform 0.35s ease',
-                boxShadow: hovered
-                    ? '0 20px 40px -12px rgba(0,0,0,0.18)'
-                    : '0 1px 3px rgba(0,0,0,0.06)',
-            }}
+
             className={`relative flex flex-col justify-between overflow-hidden rounded-3xl border p-7
         ${metric.highlight
                     ? 'border-emerald-500/40 bg-emerald-900 text-white'
@@ -132,7 +101,6 @@ function MetricCard({ metric, index, inView }) {
 }
 
 export function ResultSection() {
-    const { ref, inView } = useInView()
 
     return (
         <section
@@ -158,19 +126,13 @@ export function ResultSection() {
                 </div>
 
                 <div
-                    ref={ref}
                     className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
                 >
                     {metrics.map((metric, i) => (
-                        <MetricCard key={metric.label} metric={metric} index={i} inView={inView} />
+                        <MetricCard key={metric.label} metric={metric} index={i} />
                     ))}
                 </div>
                 <div
-                    style={{
-                        opacity: inView ? 1 : 0,
-                        transform: inView ? 'translateY(0)' : 'translateY(16px)',
-                        transition: 'opacity 0.6s ease 0.45s, transform 0.6s ease 0.45s',
-                    }}
                     className="mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl border border-emerald-800/60 bg-emerald-900/50 px-6 py-5 backdrop-blur-sm sm:flex-row"
                 >
                     <p className="text-sm text-emerald-200/80 text-center sm:text-left">
@@ -180,11 +142,6 @@ export function ResultSection() {
                 </div>
 
                 <div
-                    style={{
-                        opacity: inView ? 1 : 0,
-                        transform: inView ? 'translateY(0)' : 'translateY(16px)',
-                        transition: 'opacity 0.6s ease 0.55s, transform 0.6s ease 0.55s',
-                    }}
                     className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
                 >
                     <a
